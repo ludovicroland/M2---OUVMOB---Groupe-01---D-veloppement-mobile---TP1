@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  As recommended by Google, we use a ConstraintLayout
+  as the root element
+  We add a padding all around using the padding attribute
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:padding="12dp"
+  tools:context=".MainActivity"
+  >
+  <!--
+  * We use the src attribute to set the image to display
+  * We use a Start and a End constraint in order to center
+  horizontally the imageView into the parent
+  * we use a chainStyle in order to display correctly
+  all widget through the height
+  -->
+  <ImageView
+    android:id="@+id/avatar"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_account"
+    app:layout_constraintBottom_toTopOf="@id/name"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintVertical_chainStyle="spread"
+    />
+
+  <!--
+  * We use the hint attribute to display the "Name" string
+  * The name string has been extracted into a dedicated file
+  * The width is "0dp" because the "match_parent" value cannot be
+  used with the constraintLayout
+  * We use the inputType attribute to display the best keyboard
+  to the user
+  *
+  -->
+  <EditText
+    android:id="@+id/name"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="@string/name"
+    android:inputType="textPersonName"
+    app:layout_constraintBottom_toTopOf="@id/phoneNumber"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/avatar"
+    />
+
+  <!--
+  * We use the hint attribute to display the "Phone Number" string
+  * The name string has been extracted into a dedicated file
+  * The width is "0dp" because the "match_parent" value cannot be
+  used with the constraintLayout
+  * We use the inputType attribute to display the best keyboard
+  to the user
+  *
+  -->
+  <EditText
+    android:id="@+id/phoneNumber"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="@string/phoneNumber"
+    android:inputType="phone"
+    app:layout_constraintBottom_toTopOf="@id/address"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/name"
+    />
+
+  <!--
+  * We use the hint attribute to display the "Address" string
+  * The name string has been extracted into a dedicated file
+  * The width is "0dp" because the "match_parent" value cannot be
+  used with the constraintLayout
+  * We use the inputType attribute to display the best keyboard
+  to the user
+  *
+  -->
+  <EditText
+    android:id="@+id/address"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="@string/address"
+    android:inputType="textPostalAddress"
+    app:layout_constraintBottom_toTopOf="@id/about"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/phoneNumber"
+    />
+
+  <!--
+  * We use the hint attribute to display the "About me" string
+  * The name string has been extracted into a dedicated file
+  * The width is "0dp" because the "match_parent" value cannot be
+  used with the constraintLayout
+  * We use the inputType attribute to display the best keyboard
+  to the user
+  *
+  -->
+  <EditText
+    android:id="@+id/about"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:hint="@string/about_me"
+    android:inputType="textMultiLine"
+    android:minLines="4"
+    android:lines="4"
+    app:layout_constraintBottom_toTopOf="@id/save"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/address"
+    />
+
+  <!--
+  * We use the backgroundTint attribute to change the default color
+  of the button
+  -->
+  <Button
+    android:id="@+id/save"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:backgroundTint="@color/colorPrimary"
+    android:text="@string/save"
+    android:textColor="@android:color/white"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/about"
+    />
+</androidx.constraintlayout.widget.ConstraintLayout>
