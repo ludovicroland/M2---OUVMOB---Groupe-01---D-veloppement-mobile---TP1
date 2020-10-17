@@ -34,7 +34,7 @@ final public class UserServices
   @Override
   public List<User> sortUsersByName()
   {
-    final List<User> sortedUsers = users;
+    final List<User> sortedUsers = new ArrayList<>(users);
 
     Collections.sort(sortedUsers, new UserComparator());
 
