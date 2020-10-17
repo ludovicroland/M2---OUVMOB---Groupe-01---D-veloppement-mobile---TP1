@@ -23,7 +23,7 @@ final public class MainActivity
 
   private EditText name;
 
-  private EditText phoneNumer;
+  private EditText phoneNumber;
 
   private EditText address;
 
@@ -39,7 +39,7 @@ final public class MainActivity
 
     //Then we retrieved the widget we will need to manipulate into the
     name = findViewById(R.id.name);
-    phoneNumer = findViewById(R.id.phoneNumber);
+    phoneNumber = findViewById(R.id.phoneNumber);
     address = findViewById(R.id.address);
     about = findViewById(R.id.about);
 
@@ -52,7 +52,7 @@ final public class MainActivity
   {
     //we first retrieve user's entries
     final String userName = name.getEditableText().toString();
-    final String userPhoneNumber = phoneNumer.getEditableText().toString();
+    final String userPhoneNumber = phoneNumber.getEditableText().toString();
     final String userAddress = address.getEditableText().toString();
     final String aboutUser = about.getEditableText().toString();
 
@@ -80,7 +80,7 @@ final public class MainActivity
   {
     name.setText(null);
     address.setText(null);
-    phoneNumer.setText(null);
+    phoneNumber.setText(null);
     about.setText(null);
   }
 

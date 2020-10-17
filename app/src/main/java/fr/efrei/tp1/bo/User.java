@@ -27,7 +27,7 @@ final public class User
   public final String name;
 
   @NonNull
-  public final String phoneNumer;
+  public final String phoneNumber;
 
   @NonNull
   public final String address;
@@ -35,11 +35,11 @@ final public class User
   @NonNull
   public final String about;
 
-  public User(@NonNull String name, @NonNull String phoneNumer, @NonNull String address,
+  public User(@NonNull String name, @NonNull String phoneNumber, @NonNull String address,
       @NonNull String about)
   {
     this.name = name;
-    this.phoneNumer = phoneNumer;
+    this.phoneNumber = phoneNumber;
     this.address = address;
     this.about = about;
   }
@@ -65,7 +65,7 @@ final public class User
     {
       return false;
     }
-    if (!phoneNumer.equals(user.phoneNumer))
+    if (!phoneNumber.equals(user.phoneNumber))
     {
       return false;
     }
@@ -80,7 +80,7 @@ final public class User
   public int hashCode()
   {
     int result = name.hashCode();
-    result = 31 * result + phoneNumer.hashCode();
+    result = 31 * result + phoneNumber.hashCode();
     result = 31 * result + address.hashCode();
     result = 31 * result + about.hashCode();
     return result;
